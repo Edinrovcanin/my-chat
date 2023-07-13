@@ -19,11 +19,14 @@ const Welcome = () => {
       const activitiesCollection = collection(firestore, "activities");
 
       // Kreiranje korisničkog dokumenta u kolekciji "users"
+     
       await setDoc(doc(usersCollection, user.uid), {
         name: user.displayName,
         email: user.email,
-        // Ostali podaci koje želite pohraniti o korisniku
+        photoURL: user.photoURL, // Dodajte ovo polje za spremanje URL-a slike profila
+        
       });
+
 
       console.log("Korisnički dokument je uspješno stvoren.");
 
